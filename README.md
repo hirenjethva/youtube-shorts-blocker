@@ -54,7 +54,3 @@ Placeholder PNGs are included so the package loads in Chrome. Replace the files 
 ## Privacy
 
 Settings and the daily counter are stored **locally** in the browser. No data is sent to a server as part of this code.
-
-## License
-
-Add the license of your choice (e.g. MIT) when you publish the repo.
