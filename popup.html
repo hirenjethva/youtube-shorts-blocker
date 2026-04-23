@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="color-scheme" content="light dark" />
+    <title>FocusTube</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="wrap" id="app">
+      <div class="header">
+        <h1 class="title">FocusTube</h1>
+        <p class="subtitle">Block YouTube Shorts, keep the rest of YouTube.</p>
+      </div>
+      <div class="card">
+        <div class="row main-row">
+          <span class="label" id="statusText">On — Shorts are hidden and redirected</span>
+          <label class="switch" title="Block Shorts on YouTube">
+            <input type="checkbox" id="enabledToggle" checked />
+            <span class="slider" aria-hidden="true"></span>
+          </label>
+        </div>
+        <p class="hint" id="hint">Works on youtube.com. Reload the tab if something looks out of date.</p>
+        <div class="stats" role="status" aria-live="polite">
+          <span class="stat-label">Blocked Shorts today</span>
+          <span class="stat-value" id="countToday">0</span>
+        </div>
+      </div>
+      <p class="foot">Stays on your device. Not affiliated with YouTube or Google.</p>
+    </div>
+    <script src="popup.js" defer></script>
+  </body>
+</html>

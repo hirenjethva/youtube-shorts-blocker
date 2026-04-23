@@ -1,0 +1,45 @@
+/**
+ * FocusTube – low-specificity rules when JS adds html.focustube-on
+ * YouTube’s DOM changes often; keep critical hides in content.js for targeted nodes.
+ */
+html.focustube-on ytd-reel-shelf-renderer,
+html.focustube-on ytd-reel-shelf-renderer#header,
+html.focustube-on ytd-reel-shelf-renderer#contents {
+  display: none !important;
+}
+
+/* Guide / mini-guide: Shorts entry */
+html.focustube-on a#endpoint[href*="/shorts"],
+html.focustube-on ytd-guide-entry-renderer a[href*="/shorts/"],
+html.focustube-on ytd-mini-guide-entry-renderer a[href*="/shorts/"],
+html.focustube-on ytd-backstage-mini-guide-renderer a[href*="/shorts/"] {
+  pointer-events: none;
+}
+
+/* Hide the row in sidebars that is clearly the Shorts nav item (best effort with :has) */
+html.focustube-on ytd-guide-entry-renderer:has(a#endpoint[href*="/shorts/"]),
+html.focustube-on ytd-guide-entry-renderer:has(a[href="/shorts"]),
+html.focustube-on ytd-guide-entry-renderer:has(a[href*="/shorts?"]),
+html.focustube-on ytd-mini-guide-entry-renderer:has(a[href*="/shorts/"]) {
+  display: none !important;
+}
+
+/* Bottom / mobile chip bar (when present) */
+html.focustube-on ytd-mweb-guide-entry-renderer a[href*="/shorts/"],
+html.focustube-on ytd-mweb-mini-guide-renderer a[href*="/shorts/"] {
+  display: none !important;
+}
+
+/* Thumbnail / rich grid cards that are clearly Shorts links (search + related) */
+html.focustube-on ytd-video-renderer:has(a[href*="/shorts/"]),
+html.focustube-on ytd-rich-item-renderer:has(a[href*="/shorts/"]),
+html.focustube-on ytd-compact-video-renderer:has(a[href*="/shorts/"]) {
+  display: none !important;
+}
+
+/* Reel / Shorts item rows */
+html.focustube-on ytd-reel-item-renderer,
+html.focustube-on ytd-rich-item-renderer:has(ytm-shorts-lockup-view-model),
+html.focustube-on ytd-rich-shelf-renderer:has(ytm-shorts-lockup-view-model) {
+  display: none !important;
+}

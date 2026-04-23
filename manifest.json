@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "FocusTube – Block YouTube Shorts",
+  "short_name": "FocusTube",
+  "version": "1.0.0",
+  "description": "Hides and blocks YouTube Shorts so you can use long-form YouTube without the distraction of Shorts.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "FocusTube",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["utils.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ]
+}
